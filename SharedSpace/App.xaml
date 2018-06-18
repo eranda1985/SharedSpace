@@ -1,0 +1,296 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Application xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SharedSpace.App">
+
+  <Application.Resources>
+    <ResourceDictionary>
+
+      <!-- ### Styles Global ### -->
+
+      <!-- Colors -->
+      <Color x:Key="UniSABlueColor">#0052A0</Color>
+      <Color x:Key="TextOnUniSABlueColor">#FFFFFF</Color>
+      <Color x:Key="TabMarkerColor">#1E75C7</Color>
+      <Color x:Key="TabTextActiveColor">#FFFFFF</Color>
+      <Color x:Key="TabTextNonActiveColor">#8AB6DF</Color>
+      <Color x:Key="MasterMenuHighlight">#F3EFEC</Color>
+      <Color x:Key="MasterMenuUnselectedText">#505050</Color>
+      <Color x:Key="MasterMenuSelectedText">#0052A0</Color>
+
+      <Color x:Key="BackgroundColor">#F3EFEC</Color>
+      <Color x:Key="TextOnBkgndColor">#505050</Color>
+      <Color x:Key="ActionOnBkgndColor">#8E8E8E</Color>
+
+      <Color x:Key="ContentBackgroundColor">#FFFFFF</Color>
+      <Color x:Key="TextOnContentBkgndColor">#585858</Color>
+      <Color x:Key="TextOnContentBkgndDisabledColor">#ABABAB</Color>
+      <Color x:Key="ActionOnContentBkgndColor">#D1CECB</Color>
+      <Color x:Key="TextLinkOnContentBkgndColor">#0052A0</Color>
+
+      <Color x:Key="SeperatorLineColor">#D1CECB</Color>
+
+      <Color x:Key="CodeBackgroundColor">#F3EFEC</Color>
+      <Color x:Key="CodeTextColor">#5D5A59</Color>
+
+      <Color x:Key="BlueColor">#7EAFDE</Color>
+      <Color x:Key="GreenColor">#1CC47F</Color>
+      <Color x:Key="RedColor">#E72B2B</Color>
+      <Color x:Key="OrangeColor">#E67E22</Color>
+      <Color x:Key="GreyColor">#707070</Color>
+
+      <!-- Font Families -->
+      <OnPlatform x:TypeArguments="Font" x:Key="PrimaryFontFamilyLight">
+        <OnPlatform.Android>
+          sans-serif-light
+        </OnPlatform.Android>
+        <OnPlatform.iOS>
+          HelveticaNeue-Light
+        </OnPlatform.iOS>
+      </OnPlatform>
+      <OnPlatform x:TypeArguments="Font" x:Key="PrimaryFontFamily">
+        <OnPlatform.Android>
+          sans-serif
+        </OnPlatform.Android>
+        <OnPlatform.iOS>
+          HelveticaNeue
+        </OnPlatform.iOS>
+      </OnPlatform>
+
+      <!-- Font Sizes -->
+      <OnPlatform x:TypeArguments="x:Double" x:Key="ContentLargeFontSize">
+        <OnPlatform.Android>
+          17
+        </OnPlatform.Android>
+        <OnPlatform.iOS>
+          15
+        </OnPlatform.iOS>
+      </OnPlatform>
+      <OnPlatform x:TypeArguments="x:Double" x:Key="ContentMediumFontSize">
+        <OnPlatform.Android>
+          15
+        </OnPlatform.Android>
+        <OnPlatform.iOS>
+          13
+        </OnPlatform.iOS>
+      </OnPlatform>
+      <OnPlatform x:TypeArguments="x:Double" x:Key="ContentSmallFontSize">
+        <OnPlatform.Android>
+          19
+        </OnPlatform.Android>
+        <OnPlatform.iOS>
+          17
+        </OnPlatform.iOS>
+      </OnPlatform>
+      <OnPlatform x:TypeArguments="x:Double" x:Key="ContentXSmallFontSize">
+        <OnPlatform.Android>
+          11
+        </OnPlatform.Android>
+        <OnPlatform.iOS>
+          9
+        </OnPlatform.iOS>
+      </OnPlatform>
+      <OnPlatform x:TypeArguments="x:Double" x:Key="ContentXXSmallFontSize">
+        <OnPlatform.Android>
+          8
+        </OnPlatform.Android>
+        <OnPlatform.iOS>
+          7
+        </OnPlatform.iOS>
+      </OnPlatform>
+      <OnPlatform x:TypeArguments="x:Double" x:Key="EntryFontSize">
+        <OnPlatform.Android>
+          16
+        </OnPlatform.Android>
+        <OnPlatform.iOS>
+          14
+        </OnPlatform.iOS>
+      </OnPlatform>
+      <OnPlatform x:TypeArguments="x:Double" x:Key="ControlFontSize">
+        <OnPlatform.Android>
+          14
+        </OnPlatform.Android>
+        <OnPlatform.iOS>
+          12
+        </OnPlatform.iOS>
+      </OnPlatform>
+      <OnPlatform x:TypeArguments="x:Double" x:Key="DatePickerFontSize">
+        <OnPlatform.Android>
+          18
+        </OnPlatform.Android>
+        <OnPlatform.iOS>
+          16
+        </OnPlatform.iOS>
+      </OnPlatform>
+      <OnPlatform x:TypeArguments="x:Double" x:Key="GradeFontSize">
+        <OnPlatform.Android>
+          28
+        </OnPlatform.Android>
+        <OnPlatform.iOS>
+          26
+        </OnPlatform.iOS>
+      </OnPlatform>
+
+      <!-- Styles -->
+      <Style x:Key="ContentLabelLargeText" TargetType="Label">
+        <Setter Property="FontAttributes" Value="Bold" />
+        <Setter Property="FontSize" Value="{StaticResource ContentLargeFontSize}" />
+        <Setter Property="TextColor" Value="{StaticResource TextOnContentBkgndColor}" />
+        <Setter Property="Font" Value="{StaticResource PrimaryFontFamily}" />
+      </Style>
+      <Style x:Key="ContentLabelLargeOnBlueText" TargetType="Label">
+        <Setter Property="FontAttributes" Value="Bold" />
+        <Setter Property="FontSize" Value="{StaticResource ContentLargeFontSize}" />
+        <Setter Property="TextColor" Value="{StaticResource TextOnUniSABlueColor}" />
+        <Setter Property="Font" Value="{StaticResource PrimaryFontFamily}" />
+      </Style>
+      <Style x:Key="ContentLabelLargeDisabledText" TargetType="Label">
+        <Setter Property="FontAttributes" Value="Bold" />
+        <Setter Property="FontSize" Value="{StaticResource ContentLargeFontSize}" />
+        <Setter Property="TextColor" Value="{StaticResource TextOnContentBkgndDisabledColor}" />
+        <Setter Property="Font" Value="{StaticResource PrimaryFontFamily}" />
+      </Style>
+      <Style x:Key="ContentLabelMediumText" TargetType="Label">
+        <Setter Property="FontSize" Value="{StaticResource ContentMediumFontSize}" />
+        <Setter Property="TextColor" Value="{StaticResource TextOnContentBkgndColor}" />
+        <Setter Property="Font" Value="{StaticResource PrimaryFontFamilyLight}" />
+      </Style>
+      <Style x:Key="ContentLabelMediumDisabledText" TargetType="Label">
+        <Setter Property="FontSize" Value="{StaticResource ContentMediumFontSize}" />
+        <Setter Property="TextColor" Value="{StaticResource TextOnContentBkgndDisabledColor}" />
+        <Setter Property="Font" Value="{StaticResource PrimaryFontFamilyLight}" />
+      </Style>
+      <Style x:Key="ContentLabelSmallText" TargetType="Label">
+        <Setter Property="FontSize" Value="{StaticResource ContentSmallFontSize}" />
+        <Setter Property="TextColor" Value="{StaticResource TextOnContentBkgndColor}" />
+        <Setter Property="Font" Value="{StaticResource PrimaryFontFamilyLight}" />
+      </Style>
+      <Style x:Key="HeadingLabelText" TargetType="Label">
+        <Setter Property="FontSize" Value="{StaticResource ContentSmallFontSize}" />
+        <Setter Property="TextColor" Value="{StaticResource TextOnBkgndColor}" />
+        <Setter Property="Font" Value="{StaticResource PrimaryFontFamilyLight}" />
+      </Style>
+      <Style x:Key="ActionLabelText" TargetType="Label">
+        <Setter Property="TextColor" Value="{StaticResource ActionOnBkgndColor}" />
+        <Setter Property="FontSize" Value="{StaticResource ContentSmallFontSize}" />
+        <Setter Property="Font" Value="{StaticResource PrimaryFontFamilyLight}" />
+      </Style>
+      <Style x:Key="CodeLabelText" TargetType="Label">
+        <Setter Property="FontAttributes" Value="Bold" />
+        <Setter Property="FontSize" Value="{StaticResource ContentXSmallFontSize}" />
+        <Setter Property="TextColor" Value="{StaticResource CodeTextColor}" />
+        <Setter Property="Font" Value="{StaticResource PrimaryFontFamily}" />
+      </Style>
+      <Style x:Key="CodeLabelText2" TargetType="Label">
+        <Setter Property="FontSize" Value="{StaticResource ContentXXSmallFontSize}" />
+        <Setter Property="TextColor" Value="{StaticResource CodeTextColor}" />
+        <Setter Property="Font" Value="{StaticResource PrimaryFontFamily}" />
+      </Style>
+      <Style x:Key="HomeAlertHeadingText" TargetType="Label">
+        <Setter Property="FontAttributes" Value="Bold" />
+        <Setter Property="FontSize" Value="{StaticResource ContentMediumFontSize}" />
+        <Setter Property="TextColor" Value="{StaticResource TextOnUniSABlueColor}" />
+        <Setter Property="Font" Value="{StaticResource PrimaryFontFamily}" />
+      </Style>
+      <Style x:Key="HomeAlertContentText" TargetType="Label">
+        <Setter Property="FontSize" Value="{StaticResource ContentMediumFontSize}" />
+        <Setter Property="TextColor" Value="{StaticResource TextOnUniSABlueColor}" />
+        <Setter Property="Font" Value="{StaticResource PrimaryFontFamilyLight}" />
+      </Style>
+      <Style x:Key="NoDataMessageText" TargetType="Label">
+        <Setter Property="FontSize" Value="{StaticResource ContentMediumFontSize}" />
+        <Setter Property="TextColor" Value="{StaticResource TextOnContentBkgndColor}" />
+        <Setter Property="Font" Value="{StaticResource PrimaryFontFamilyLight}" />
+      </Style>
+      <Style x:Key="LinkLabelText" TargetType="Label">
+        <Setter Property="FontSize" Value="{StaticResource ContentMediumFontSize}" />
+        <Setter Property="TextColor" Value="{StaticResource TextLinkOnContentBkgndColor}" />
+        <Setter Property="Font" Value="{StaticResource PrimaryFontFamilyLight}" />
+      </Style>
+      <Style x:Key="TabTextActive" TargetType="Label">
+        <Setter Property="FontAttributes" Value="Bold" />
+        <Setter Property="FontSize" Value="{StaticResource ControlFontSize}" />
+        <Setter Property="TextColor" Value="{StaticResource TabTextActiveColor}" />
+        <Setter Property="Font" Value="{StaticResource PrimaryFontFamilyLight}" />
+      </Style>
+      <Style x:Key="TabTextNonActive" TargetType="Label">
+        <Setter Property="FontAttributes" Value="Bold" />
+        <Setter Property="FontSize" Value="{StaticResource ControlFontSize}" />
+        <Setter Property="TextColor" Value="{StaticResource TabTextNonActiveColor}" />
+        <Setter Property="Font" Value="{StaticResource PrimaryFontFamily}" />
+      </Style>
+      <Style x:Key="DatePickerText" TargetType="Label">
+        <Setter Property="FontAttributes" Value="Bold" />
+        <Setter Property="FontSize" Value="{StaticResource DatePickerFontSize}" />
+        <Setter Property="TextColor" Value="{StaticResource TextOnUniSABlueColor}" />
+        <Setter Property="Font" Value="{StaticResource PrimaryFontFamilyLight}" />
+      </Style>
+      <Style x:Key="ButtonText" TargetType="Button">
+        <Setter Property="FontAttributes" Value="Bold" />
+        <Setter Property="FontSize" Value="{StaticResource ControlFontSize}" />
+        <Setter Property="TextColor" Value="{StaticResource TextOnUniSABlueColor}" />
+        <Setter Property="Font" Value="{StaticResource PrimaryFontFamilyLight}" />
+      </Style>
+      <Style x:Key="EntryText" TargetType="Entry">
+        <Setter Property="FontSize" Value="{StaticResource EntryFontSize}" />
+        <Setter Property="TextColor" Value="{StaticResource TextOnContentBkgndColor}" />
+        <Setter Property="FontFamily" Value="{StaticResource PrimaryFontFamily}" />
+      </Style>
+      <Style x:Key="EditorText" TargetType="Editor">
+        <Setter Property="FontSize" Value="{StaticResource EntryFontSize}" />
+        <Setter Property="TextColor" Value="{StaticResource TextOnContentBkgndColor}" />
+        <Setter Property="FontFamily" Value="{StaticResource PrimaryFontFamily}" />
+      </Style>
+      <Style x:Key="PickerOverlayText" TargetType="Label">
+        <Setter Property="FontSize" Value="{StaticResource EntryFontSize}" />
+        <Setter Property="TextColor" Value="{StaticResource TextOnContentBkgndColor}" />
+        <Setter Property="FontFamily" Value="{StaticResource PrimaryFontFamily}" />
+      </Style>
+      <Style x:Key="MasterMenuText" TargetType="Label">
+        <Setter Property="FontSize" Value="{StaticResource ControlFontSize}" />
+        <Setter Property="Font" Value="{StaticResource PrimaryFontFamily}" />
+      </Style>
+      <Style x:Key="GradeLabelText" TargetType="Label">
+        <Setter Property="FontAttributes" Value="Bold" />
+        <Setter Property="FontSize" Value="{StaticResource GradeFontSize}" />
+        <Setter Property="TextColor" Value="{StaticResource TextOnContentBkgndColor}" />
+        <Setter Property="Font" Value="{StaticResource PrimaryFontFamily}" />
+      </Style>
+      <Style x:Key="LoginPageLabelText" TargetType="Label">
+        <Setter Property="FontSize" Value="{StaticResource ContentLargeFontSize}" />
+        <Setter Property="TextColor" Value="{StaticResource TextOnUniSABlueColor}" />
+        <Setter Property="Font" Value="{StaticResource PrimaryFontFamily}" />
+      </Style>
+      <Style x:Key="LoginForgotPinBtn" TargetType="Button">
+        <Setter Property="BackgroundColor" Value="{StaticResource BackgroundColor}" />
+        <Setter Property="TextColor" Value="{DynamicResource UniSABlueColor}" />
+      </Style>
+
+
+      <!-- Start Pages-->
+      <Style x:Key="WhiteBackgroundButtonStyle" TargetType="Button">
+        <Setter Property="BackgroundColor" Value="{StaticResource TextOnUniSABlueColor}" />
+        <Setter Property="TextColor" Value="{DynamicResource UniSABlueColor}" />
+        <Setter Property="BorderRadius" Value="5" />
+        <Setter Property="WidthRequest" Value="250" />
+        <Setter Property="HorizontalOptions" Value="Center" />
+      </Style>
+
+      <ControlTemplate x:Key="StartPageTemplate">
+        <Grid>
+          <Grid.RowDefinitions>
+            <RowDefinition Height="4*" />
+            <RowDefinition Height="6*" />
+          </Grid.RowDefinitions>
+          <StackLayout VerticalOptions="End" >
+            <Image Source="Logo1.png" HeightRequest="120"/>
+            <BoxView HeightRequest="30" Color="Transparent" />
+          </StackLayout>
+          <ContentPresenter Grid.Row="1" />
+        </Grid>
+      </ControlTemplate>
+
+    </ResourceDictionary>
+  </Application.Resources>
+  
+</Application>
