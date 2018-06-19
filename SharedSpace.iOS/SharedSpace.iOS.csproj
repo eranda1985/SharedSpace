@@ -78,22 +78,6 @@
   <ItemGroup>
     <Compile Include="Main.cs" />
     <Compile Include="AppDelegate.cs" />
-    <Compile Include="NativeServices\ExpandableListCell.cs" />
-    <Compile Include="NativeServices\ExpandableListDataSource.cs" />
-    <Compile Include="NativeServices\ExpandableListViewEventArgs.cs" />
-    <Compile Include="Renderers\ExpandableListViewRenderer.cs" />
-    <BundleResource Include="Resources\chevron_right_grey%402x.png" />
-    <BundleResource Include="Resources\chevron_right_grey%403x.png" />
-    <BundleResource Include="Resources\chevron_right_lightgrey.png" />
-    <BundleResource Include="Resources\chevron_right_lightgrey%402x.png" />
-    <BundleResource Include="Resources\chevron_right_lightgrey%403x.png" />
-    <BundleResource Include="Resources\arrow_down_darkgrey.png" />
-    <BundleResource Include="Resources\arrow_down_darkgrey%402x.png" />
-    <BundleResource Include="Resources\arrow_down_darkgrey%403x.png" />
-    <BundleResource Include="Resources\arrow_up_darkgrey.png" />
-    <BundleResource Include="Resources\arrow_up_darkgrey%402x.png" />
-    <BundleResource Include="Resources\arrow_up_darkgrey%403x.png" />
-    <BundleResource Include="Resources\chevron_right_grey.png" />
     <None Include="Info.plist" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Content Include="Entitlements.plist" />
@@ -174,8 +158,16 @@
       <Visible>false</Visible>
     </ImageAsset>
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
+    <Folder Include="Resources\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SharedSpace.iOS.Lib\SharedSpace.iOS.Lib.csproj">
+      <Project>{E71F3053-056C-4381-9638-048ED73BDFF6}</Project>
+      <Name>SharedSpace.iOS.Lib</Name>
+      <IsAppExtension>false</IsAppExtension>
+      <IsWatchApp>false</IsWatchApp>
+    </ProjectReference>
     <ProjectReference Include="..\SharedSpace\SharedSpace.csproj">
       <Project>{17139C0A-94C6-4B69-9791-9471E445B31A}</Project>
       <Name>SharedSpace</Name>

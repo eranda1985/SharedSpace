@@ -1,5 +1,5 @@
 ﻿using Foundation;
-using SharedSpace;
+using SharedSpace.iOS.Lib;
 using UIKit;
 
 namespace SharedSpace.iOS
@@ -13,6 +13,9 @@ namespace SharedSpace.iOS
 		public override bool FinishedLaunching(UIApplication application, NSDictionary launchOptions)
 		{
 			Xamarin.Forms.Forms.Init();
+			// We only need a reference to SharedSpace.Droid.Lib.ExpandableListViewRenderer. 
+			// The following line ensures that we add a reference to ExpandableListViewRenderer. 
+			ExpandableListViewRenderer.Init();
 			LoadApplication(new App());
 			return base.FinishedLaunching(application, launchOptions);
 		}
