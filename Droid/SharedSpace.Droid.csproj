@@ -56,8 +56,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="MainActivity.cs" />
-    <Compile Include="Renderers\ExpandableListViewDataAdaptor.cs" />
-    <Compile Include="Renderers\ExpandableListViewRenderer.cs" />
     <Compile Include="Resources\Resource.Designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -133,12 +131,6 @@
     </PackageReference>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\SharedSpace\SharedSpace.csproj">
-      <Project>{17139C0A-94C6-4B69-9791-9471E445B31A}</Project>
-      <Name>SharedSpace</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
     <AndroidResource Include="Resources\layout\ExpandableListGroup.axml" />
   </ItemGroup>
   <ItemGroup>
@@ -180,7 +172,19 @@
   <ItemGroup>
     <AndroidResource Include="Resources\mipmap-xxhdpi\chevron_right_grey.png" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Renderers\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SharedSpace.Droid.Lib\SharedSpace.Droid.Lib.csproj">
+      <Project>{2f3d3492-4212-4809-8176-fc7bee9804a7}</Project>
+      <Name>SharedSpace.Droid.Lib</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SharedSpace\SharedSpace.csproj">
+      <Project>{17139c0a-94c6-4b69-9791-9471e445b31a}</Project>
+      <Name>SharedSpace</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
 		Other similar extension points exist, see Microsoft.Common.targets.

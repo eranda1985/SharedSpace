@@ -1,12 +1,7 @@
-﻿using System;
-using Android.App;
-using Android.Widget;
+﻿using Android.App;
 using Android.OS;
-using Android.Support.Design.Widget;
-using Android.Support.V7.App;
-using Android.Views;
-using SharedSpace;
 using Xamarin.Forms;
+using SharedSpace.Droid.Lib;
 
 namespace SharedSpace.Droid
 {
@@ -19,7 +14,12 @@ namespace SharedSpace.Droid
 			base.OnCreate(savedInstanceState);
 
 			Forms.Init(this, savedInstanceState);
-			
+
+			// We only need a reference to SharedSpace.Droid.Lib.ExpandableListViewRenderer. 
+			// The following line ensures that we add a reference to ExpandableListViewRenderer. 
+			ExpandableListViewRenderer.Init();
+
+
 			LoadApplication(new App());
 		}
 
