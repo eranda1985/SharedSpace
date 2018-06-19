@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+  <color name="unisa_blue">#ff004080</color>
+  <color name="unisa_white">#fff5f5f5</color>
+  <color name="unisa_grey">#ff585858</color>
+  <color name="unisa_darkgrey">#ff444444</color>
+
+  <style name="MyTheme" parent="MyTheme.Base">
+
+  </style>
+  <!-- Base theme applied no matter what API -->
+  <style name="MyTheme.Base" parent="Theme.AppCompat.Light.DarkActionBar">
+    <!--If you are using revision 22.1 please use just windowNoTitle. Without android:-->
+    <item name="windowNoTitle">true</item>
+    <!--We will be using the toolbar so no need to show ActionBar-->
+    <item name="windowActionBar">false</item>
+    <!-- Set theme colors from http://www.google.com/design/spec/style/color.html#color-color-palette-->
+    <!-- colorPrimary is used for the default action bar background -->
+    <item name="colorPrimary">@color/unisa_white</item>
+    <!-- colorPrimaryDark is used for the status bar -->
+    <item name="colorPrimaryDark">#000000</item>
+    <!-- colorAccent is used as the default value for colorControlActivated
+         which is used to tint widgets -->
+    <item name="colorAccent">#FF4081</item>
+    <!-- You can also set colorControlNormal, colorControlActivated
+         colorControlHighlight and colorSwitchThumbNormal. -->
+    <item name="windowActionModeOverlay">true</item>
+    <item name="android:datePickerDialogTheme">@style/AppCompatDialogStyle</item>
+    <item name="android:colorActivatedHighlight">@android:color/transparent</item>
+    <!--		<item name="android:listViewStyle">@style/ListViewStyle</item>-->
+  </style>
+  <style name="AppCompatDialogStyle" parent="Theme.AppCompat.Light.Dialog">
+    <item name="colorAccent">#FF4081</item>
+  </style>
+  <style name="CustomTabTextStyle" parent="@android:style/TextAppearance.Widget.TabWidget">
+    <item name="android:textSize">10sp</item>
+    <item name="android:textAllCaps">false</item>
+  </style>
+  <style name="ExpandableListGroupStyle" parent="@android:style/Widget.ListView">
+    <item name="android:textSize">19dp</item>
+    <item name="android:textAllCaps">false</item>
+    <item name="android:textColor">#505050</item>
+  </style>
+  <style name="ExpandableListChildStyle" parent="@android:style/Widget.ListView">
+    <item name="android:textSize">17dp</item>
+    <item name="android:textAllCaps">false</item>
+    <item name="android:textColor">#585858</item>
+    <item name="android:textStyle">bold</item>
+  </style>
+  <style name="ExpandableListChildSubStyle" parent="@android:style/Widget.ListView">
+    <item name="android:textSize">15dp</item>
+    <item name="android:textAllCaps">false</item>
+    <item name="android:textColor">#585858</item>
+    <item name="android:textStyle">normal</item>
+  </style>
+  <!--	<style name="ListViewStyle" parent="@android:style/Widget.ListView">
+		<item name="android:listSelector">@drawable/background_listview</item>
+	</style>-->
+
+  <style name="Theme.UniSA" parent="Theme.UniSA.Base">
+
+  </style>
+
+  <style name="Theme.UniSA.Base" parent="@android:style/Theme.DeviceDefault">
+    <item name="android:colorBackground">@color/unisa_blue</item>
+    <!--nav bar bg after selection-->
+    <item name="android:windowBackground">@color/unisa_white</item>
+    <!--content bg-->
+    <item name="android:colorPrimary">@color/unisa_blue</item>
+    <!--nav bar bg-->
+    <item name="android:colorPrimaryDark">@color/unisa_white</item>
+    <item name="android:colorAccent">@color/unisa_white</item>
+    <item name="android:textColorPrimary">@color/unisa_white</item>
+    <!--Item title text-->
+    <item name="android:textColorSecondary">@color/unisa_white</item>
+    <!--content/date text-->
+    <item name="android:colorControlNormal">@color/unisa_grey</item>
+    <!--checkbox-->
+    <item name="android:colorControlActivated">@color/unisa_grey</item>
+    <!--checkbox-->
+    <item name="android:colorButtonNormal">@color/unisa_white</item>
+  </style>
+
+</resources>
