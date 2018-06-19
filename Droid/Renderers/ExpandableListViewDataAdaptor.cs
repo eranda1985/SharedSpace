@@ -6,7 +6,7 @@ using Android.Views;
 using Android.Widget;
 using SharedSpace.DomainObjects;
 
-namespace Droid.Renderers
+namespace SharedSpace.Droid.Renderers
 {
 	public class ExpandableListViewDataAdaptor : BaseExpandableListAdapter
 	{

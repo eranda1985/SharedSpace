@@ -6,9 +6,9 @@ using SharedSpace.CustomControls;
 using Xamarin.Forms;
 using Xamarin.Forms.Platform.Android;
 
-[assembly: ExportRenderer(typeof(MultiLevelListView), typeof(Droid.Renderers.ExpandableListViewRenderer))]
+[assembly: ExportRenderer(typeof(MultiLevelListView), typeof(SharedSpace.Droid.Renderers.ExpandableListViewRenderer))]
 
-namespace Droid.Renderers
+namespace SharedSpace.Droid.Renderers
 {
 	public class ExpandableListViewRenderer : ViewRenderer<MultiLevelListView, ExpandableListView>,
 																						ExpandableListView.IOnGroupExpandListener,

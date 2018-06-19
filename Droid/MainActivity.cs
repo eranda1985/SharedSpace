@@ -8,7 +8,7 @@ using Android.Views;
 using SharedSpace;
 using Xamarin.Forms;
 
-namespace Droid
+namespace SharedSpace.Droid
 {
 	[Activity(Label = "@string/app_name", Theme = "@style/MyTheme", MainLauncher = true)]
 	public class MainActivity : Xamarin.Forms.Platform.Android.FormsAppCompatActivity
