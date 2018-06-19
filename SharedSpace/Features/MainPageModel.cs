@@ -10,8 +10,9 @@ namespace SharedSpace.Features
 	public class MainPageModel : FreshMvvm.FreshBasePageModel
 	{
 		private object _initData = null;
+		private ExpandableListCollection _listItems = null;
 
-		public List<ExpandableListItem> ListItems { get; set; } = new List<ExpandableListItem>();
+		public ExpandableListCollection ListItems { get => _listItems; set { _listItems = value; RaisePropertyChanged("ListItems"); } }
 
 		public Command ItemSelected => new Command(async (selectedItem) =>
 		{
@@ -22,7 +23,7 @@ namespace SharedSpace.Features
 
 		public MainPageModel()
 		{
-			
+			_listItems = new ExpandableListCollection();
 		}
 
 		public override void Init(object initData)
@@ -40,12 +41,12 @@ namespace SharedSpace.Features
 		private void LoadData()
 		{
 			ListItems.Clear();
-			ListItems.AddRange(GetMockRecordings());
+			ListItems = GetMockRecordings();
 		}
 
-		private List<ExpandableListItem> GetMockRecordings()
+		private ExpandableListCollection GetMockRecordings()
 		{
-			return new List<ExpandableListItem>
+			var temp =  new List<ExpandableListItem>
 			{
 				new ExpandableListItem
 				{
@@ -89,6 +90,10 @@ namespace SharedSpace.Features
 					}
 				}
 			};
+
+			var res = new ExpandableListCollection();
+			res.AddRange(temp);
+			return res;
 		}
 	}
 }
