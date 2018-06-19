@@ -97,7 +97,11 @@ namespace SharedSpace.iOS.NativeServices
 				tableView.ReloadSections(NSIndexSet.FromIndex(indexPath.Section), UITableViewRowAnimation.Fade);
 			}
 			tableView.DeselectRow(indexPath, true);
-			rowItem.ItemClicked += RowItem_ItemClicked;
+			if (!rowItem.HasItemClickAssigned)
+			{
+				rowItem.ItemClicked += RowItem_ItemClicked;
+			}
+			rowItem.HasItemClickAssigned = true;
 			rowItem.HandleClickCallBack.Invoke(tableView, new ExpandableListViewEventArgs("ChildSelectedCommand") { GroupPosition = indexPath.Section, ChildPosition = indexPath.Row });
 		}
 
