@@ -1,5 +1,6 @@
 ﻿using CoreGraphics;
 using System;
+using System.Reflection;
 using UIKit;
 
 namespace SharedSpace.iOS.Lib
@@ -85,7 +86,11 @@ namespace SharedSpace.iOS.Lib
 
 			imgIcon = new UIImageView(new CGRect(ContentView.Frame.Width - 20,0,20,Height));
 			imgIcon.ContentMode = UIViewContentMode.Center;
-			imgIcon.Image = UIImage.FromBundle("chevron_right_lightgrey");
+			var assembly = IntrospectionExtensions.GetTypeInfo(typeof(ExpandableListCell)).Assembly;
+
+			// The Microsoft documentation was apparently wrong. 
+			// When you load an embedded resource you have to use the AssemblyName.FolderName.ResourceName naming format.
+			imgIcon.Image = UIImage.FromResource(assembly, "SharedSpace.iOS.Lib.Resources.chevron_right_lightgrey.png");
 			imgIcon.AutoresizingMask = UIViewAutoresizing.FlexibleLeftMargin;
 					
 			SubContainerView.AddSubview(lblName);

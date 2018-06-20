@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using CoreGraphics;
 using Foundation;
 using SharedSpace.CustomControls;
@@ -127,11 +128,15 @@ namespace SharedSpace.iOS.Lib
 
 			// Set the group image icon as per its state
 			UIImageView imgView = groupSection.Subviews.OfType<UIImageView>().FirstOrDefault();
+			var assembly = IntrospectionExtensions.GetTypeInfo(typeof(ExpandableListDataSource)).Assembly;
+
 			if (_items[(int)section].IsExpanded)
 			{
 				if (imgView == null)
 				{
-					imgView = new UIImageView(UIImage.FromBundle("arrow_up_darkgrey"))
+					// The Microsoft documentation was wrong. 
+					// When you load an embedded resource you have to use the AssemblyName.FolderName.ResourceName naming format.
+					imgView = new UIImageView(UIImage.FromResource(assembly, "SharedSpace.iOS.Lib.Resources.arrow_up_darkgrey.png"))
 					{
 						Frame = new CGRect(groupSection.Frame.Width - 20, 0, 20, height),
 						AutoresizingMask = UIViewAutoresizing.FlexibleLeftMargin,
@@ -141,14 +146,14 @@ namespace SharedSpace.iOS.Lib
 				}
 				else
 				{
-					imgView.Image = UIImage.FromBundle("arrow_up_darkgrey");
+					imgView.Image = UIImage.FromResource(assembly, "SharedSpace.iOS.Lib.Resources.arrow_up_darkgrey.png");
 				}
 			}
 			else
 			{
 				if (imgView == null)
 				{
-					imgView = new UIImageView(UIImage.FromBundle("arrow_down_darkgrey"))
+					imgView = new UIImageView(UIImage.FromResource(assembly, "SharedSpace.iOS.Lib.Resources.arrow_down_darkgrey.png"))
 					{
 						Frame = new CGRect(groupSection.Frame.Width - 20, 0, 20, height),
 						AutoresizingMask = UIViewAutoresizing.FlexibleLeftMargin,
@@ -158,7 +163,7 @@ namespace SharedSpace.iOS.Lib
 				}
 				else
 				{
-					imgView.Image = UIImage.FromBundle("arrow_down_darkgrey");
+					imgView.Image = UIImage.FromResource(assembly, "SharedSpace.iOS.Lib.Resources.arrow_down_darkgrey.png");
 				}
 			}
 
