@@ -60,40 +60,40 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\chevron_right_lightgrey%403x.png" />
+    <EmbeddedResource Include="Resources\chevron_right_lightgrey%403x.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\arrow_down_darkgrey.png" />
+    <EmbeddedResource Include="Resources\arrow_down_darkgrey.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\arrow_down_darkgrey%402x.png" />
+    <EmbeddedResource Include="Resources\arrow_down_darkgrey%402x.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\arrow_down_darkgrey%403x.png" />
+    <EmbeddedResource Include="Resources\arrow_down_darkgrey%403x.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\arrow_up_darkgrey.png" />
+    <EmbeddedResource Include="Resources\arrow_up_darkgrey.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\arrow_up_darkgrey%402x.png" />
+    <EmbeddedResource Include="Resources\arrow_up_darkgrey%402x.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\arrow_up_darkgrey%403x.png" />
+    <EmbeddedResource Include="Resources\arrow_up_darkgrey%403x.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\chevron_right_grey.png" />
+    <EmbeddedResource Include="Resources\chevron_right_grey.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\chevron_right_grey%402x.png" />
+    <EmbeddedResource Include="Resources\chevron_right_grey%402x.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\chevron_right_grey%403x.png" />
+    <EmbeddedResource Include="Resources\chevron_right_grey%403x.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\chevron_right_lightgrey.png" />
+    <EmbeddedResource Include="Resources\chevron_right_lightgrey.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\chevron_right_lightgrey%402x.png" />
+    <EmbeddedResource Include="Resources\chevron_right_lightgrey%402x.png" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\SharedSpace\SharedSpace.csproj">

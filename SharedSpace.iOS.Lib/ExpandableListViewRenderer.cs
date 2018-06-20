@@ -63,7 +63,7 @@ namespace SharedSpace.iOS.Lib
 			{
 				var eventArgs = e as ExpandableListViewEventArgs;
 				var dataItem = Element.Items[eventArgs.GroupPosition].ChildItems[eventArgs.ChildPosition];
-				Element.ChildSelectedCommand.Execute(dataItem);
+				Element.ChildSelectedCommand?.Execute(dataItem);
 			}
 		}
 
