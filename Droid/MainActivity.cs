@@ -1,9 +1,10 @@
 ﻿using Android.App;
 using Android.OS;
+using Example.SharedSpace.Common;
 using SharedSpace.Droid.Lib;
 using Xamarin.Forms;
 
-namespace SharedSpace.Droid
+namespace Example.SharedSpace.Droid
 {
 	[Activity(Label = "@string/app_name", Theme = "@style/MyTheme", MainLauncher = true)]
 	public class MainActivity : Xamarin.Forms.Platform.Android.FormsAppCompatActivity
@@ -18,7 +19,6 @@ namespace SharedSpace.Droid
 			// We only need a reference to SharedSpace.Droid.Lib.ExpandableListViewRenderer. 
 			// The following line ensures that we add a reference to ExpandableListViewRenderer. 
 			ExpandableListViewRenderer.Init();
-
 
 			LoadApplication(new App());
 		}

@@ -10,8 +10,8 @@
     <TemplateGuid>{84dd83c5-0fe3-4294-9419-09e7c8ba324f}</TemplateGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>SharedSpace.Droid</RootNamespace>
-    <AssemblyName>SharedSpace.Droid</AssemblyName>
+    <RootNamespace>Example.SharedSpace.Droid</RootNamespace>
+    <AssemblyName>Example.SharedSpace.Droid</AssemblyName>
     <FileAlignment>512</FileAlignment>
     <AndroidApplication>True</AndroidApplication>
     <AndroidResgenFile>Resources\Resource.Designer.cs</AndroidResgenFile>
@@ -93,6 +93,9 @@
     <PackageReference Include="NuGet.Build.Packaging">
       <Version>0.2.2</Version>
     </PackageReference>
+    <PackageReference Include="SharedSpace.ExpandableList">
+      <Version>1.0.0</Version>
+    </PackageReference>
     <PackageReference Include="Xamarin.Android.Support.Animated.Vector.Drawable">
       <Version>27.0.2.1</Version>
     </PackageReference>
@@ -131,58 +134,12 @@
     </PackageReference>
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\layout\ExpandableListGroup.axml" />
+    <Folder Include="Resources\layout\" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\layout\ExpandableListChild.axml" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\mipmap-hdpi\chevron_right_lightgrey.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\mipmap-hdpi\arrow_down_darkgrey.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\mipmap-hdpi\arrow_up_darkgrey.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\mipmap-hdpi\chevron_right_grey.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\mipmap-xhdpi\chevron_right_lightgrey.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\mipmap-xhdpi\arrow_down_darkgrey.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\mipmap-xhdpi\arrow_up_darkgrey.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\mipmap-xhdpi\chevron_right_grey.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\mipmap-xxhdpi\chevron_right_lightgrey.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\mipmap-xxhdpi\arrow_down_darkgrey.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\mipmap-xxhdpi\arrow_up_darkgrey.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\mipmap-xxhdpi\chevron_right_grey.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Renderers\" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\SharedSpace.Droid.Lib\SharedSpace.Droid.Lib.csproj">
-      <Project>{2f3d3492-4212-4809-8176-fc7bee9804a7}</Project>
-      <Name>SharedSpace.Droid.Lib</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\SharedSpace\SharedSpace.csproj">
-      <Project>{17139c0a-94c6-4b69-9791-9471e445b31a}</Project>
-      <Name>SharedSpace</Name>
+    <ProjectReference Include="..\Example.SharedSpace.Common\Example.SharedSpace.Common.csproj">
+      <Project>{CDCC8BB2-9B08-452F-A3B9-647E059314E6}</Project>
+      <Name>Example.SharedSpace.Common</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />

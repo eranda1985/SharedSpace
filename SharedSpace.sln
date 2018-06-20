@@ -13,6 +13,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SharedSpace.Droid.Lib", "Sh
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SharedSpace.iOS.Lib", "SharedSpace.iOS.Lib\SharedSpace.iOS.Lib.csproj", "{E71F3053-056C-4381-9638-048ED73BDFF6}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Example", "Example", "{D5AE3B0C-32D6-44D6-8495-6F7F7D9293B2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Example.SharedSpace.Common", "Example.SharedSpace.Common\Example.SharedSpace.Common.csproj", "{CDCC8BB2-9B08-452F-A3B9-647E059314E6}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -77,9 +81,26 @@ Global
 		{E71F3053-056C-4381-9638-048ED73BDFF6}.Release|iPhone.Build.0 = Release|Any CPU
 		{E71F3053-056C-4381-9638-048ED73BDFF6}.Release|iPhoneSimulator.ActiveCfg = Release|Any CPU
 		{E71F3053-056C-4381-9638-048ED73BDFF6}.Release|iPhoneSimulator.Build.0 = Release|Any CPU
+		{CDCC8BB2-9B08-452F-A3B9-647E059314E6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CDCC8BB2-9B08-452F-A3B9-647E059314E6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CDCC8BB2-9B08-452F-A3B9-647E059314E6}.Debug|iPhone.ActiveCfg = Debug|Any CPU
+		{CDCC8BB2-9B08-452F-A3B9-647E059314E6}.Debug|iPhone.Build.0 = Debug|Any CPU
+		{CDCC8BB2-9B08-452F-A3B9-647E059314E6}.Debug|iPhoneSimulator.ActiveCfg = Debug|Any CPU
+		{CDCC8BB2-9B08-452F-A3B9-647E059314E6}.Debug|iPhoneSimulator.Build.0 = Debug|Any CPU
+		{CDCC8BB2-9B08-452F-A3B9-647E059314E6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CDCC8BB2-9B08-452F-A3B9-647E059314E6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CDCC8BB2-9B08-452F-A3B9-647E059314E6}.Release|iPhone.ActiveCfg = Release|Any CPU
+		{CDCC8BB2-9B08-452F-A3B9-647E059314E6}.Release|iPhone.Build.0 = Release|Any CPU
+		{CDCC8BB2-9B08-452F-A3B9-647E059314E6}.Release|iPhoneSimulator.ActiveCfg = Release|Any CPU
+		{CDCC8BB2-9B08-452F-A3B9-647E059314E6}.Release|iPhoneSimulator.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{3BC0AC7E-3B3B-4D3F-9CC0-B2BDECC460A6} = {D5AE3B0C-32D6-44D6-8495-6F7F7D9293B2}
+		{80A96B52-6758-4BDB-B0B4-CEA4CA155C60} = {D5AE3B0C-32D6-44D6-8495-6F7F7D9293B2}
+		{CDCC8BB2-9B08-452F-A3B9-647E059314E6} = {D5AE3B0C-32D6-44D6-8495-6F7F7D9293B2}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {D514FDD5-8EA8-4802-B397-EB36F437ABB0}
