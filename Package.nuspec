@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>SharedSpace.ExpandableList</id>
+    <version>1.0.0</version>
+    <authors>Eranda Galhenage</authors>
+    <owners>Eranda Galhenage</owners>
+    <iconUrl>https://github.com/eranda1985/SharedSpace</iconUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>An expandable list for iOS and Android. Built against Xamarin Forms 2.4.0.91020</description>
+    <releaseNotes>Summary of changes made in this release of the package.</releaseNotes>
+    <copyright>Copyright 2018</copyright>
+    <tags></tags>
+    <dependencies>
+      <dependency id="NETStandard.Library" version="2.0.1" />
+      <dependency id="Microsoft.NETCore.Platforms" version="1.1.0" />
+      <dependency id="Xamarin.Forms" version="2.4.0.91020" />
+      <dependency id="FreshEssentials" version="2.1.2" />
+      <dependency id="FreshMvvm" version="2.2.0" />
+    </dependencies>
+  </metadata>
+  <files>
+    <!--Core-->
+    <file src="SharedSpace\bin\Release\netstandard2.0\*.dll" target="lib\netstandard2.0" />
+    <!--Xamarin.Android-->
+    <file src="SharedSpace.Droid.Lib\bin\Release\*.dll" target="lib\MonoAndroid40" />
+    <!--Xamarin.iOS-->
+    <file src="SharedSpace.iOS.Lib\bin\Release\*.dll" target="lib\Xamarin.iOS100" />
+  </files>
+</package>
