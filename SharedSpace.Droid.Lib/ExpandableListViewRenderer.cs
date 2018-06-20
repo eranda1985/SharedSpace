@@ -17,7 +17,7 @@ namespace SharedSpace.Droid.Lib
 	{
 		private int _lastExpandedGroup = -1;
 
-		public ExpandableListViewRenderer(Android.Content.Context context): base(context)
+		public ExpandableListViewRenderer()
 		{
 
 		}
