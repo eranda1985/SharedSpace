@@ -5,9 +5,9 @@ VisualStudioVersion = 15.0.27703.2026
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SharedSpace", "SharedSpace\SharedSpace.csproj", "{17139C0A-94C6-4B69-9791-9471E445B31A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SharedSpace.Droid", "Droid\SharedSpace.Droid.csproj", "{3BC0AC7E-3B3B-4D3F-9CC0-B2BDECC460A6}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Example.SharedSpace.Droid", "Example.SharedSpace.Droid\Example.SharedSpace.Droid.csproj", "{3BC0AC7E-3B3B-4D3F-9CC0-B2BDECC460A6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SharedSpace.iOS", "SharedSpace.iOS\SharedSpace.iOS.csproj", "{80A96B52-6758-4BDB-B0B4-CEA4CA155C60}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Example.SharedSpace.iOS", "Example.SharedSpace.iOS\Example.SharedSpace.iOS.csproj", "{80A96B52-6758-4BDB-B0B4-CEA4CA155C60}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SharedSpace.Droid.Lib", "SharedSpace.Droid.Lib\SharedSpace.Droid.Lib.csproj", "{2F3D3492-4212-4809-8176-FC7BEE9804A7}"
 EndProject
@@ -15,7 +15,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SharedSpace.iOS.Lib", "Shar
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Example", "Example", "{D5AE3B0C-32D6-44D6-8495-6F7F7D9293B2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Example.SharedSpace.Common", "Example.SharedSpace.Common\Example.SharedSpace.Common.csproj", "{CDCC8BB2-9B08-452F-A3B9-647E059314E6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Example.SharedSpace.Common", "Example.SharedSpace.Common\Example.SharedSpace.Common.csproj", "{CDCC8BB2-9B08-452F-A3B9-647E059314E6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
