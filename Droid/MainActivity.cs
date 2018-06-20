@@ -1,7 +1,7 @@
 ﻿using Android.App;
 using Android.OS;
-using Xamarin.Forms;
 using SharedSpace.Droid.Lib;
+using Xamarin.Forms;
 
 namespace SharedSpace.Droid
 {

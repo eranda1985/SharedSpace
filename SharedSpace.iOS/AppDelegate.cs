@@ -1,5 +1,5 @@
 ﻿using Foundation;
-using SharedSpace.iOS.Lib;
+//using SharedSpace.iOS.Lib;
 using UIKit;
 
 namespace SharedSpace.iOS
@@ -15,7 +15,7 @@ namespace SharedSpace.iOS
 			Xamarin.Forms.Forms.Init();
 			// We only need a reference to SharedSpace.Droid.Lib.ExpandableListViewRenderer. 
 			// The following line ensures that we add a reference to ExpandableListViewRenderer. 
-			ExpandableListViewRenderer.Init();
+			//ExpandableListViewRenderer.Init();
 			LoadApplication(new App());
 			return base.FinishedLaunching(application, launchOptions);
 		}
