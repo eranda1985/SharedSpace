@@ -1,17 +1,18 @@
 # SharedSpace
 A Xamarin Forms expandable list for iOS &amp; Android, providing a single group to be expanded at a time.    
 
+This is also available as a nuget package in (https://www.nuget.org/packages/SharedSpace.ExpandableList/).  
+
 The aim of this project is to create a cross-platform expandable list which is easier to use and saves developer time. Inspired by the work of [Jay Shukla](https://github.com/shuklajay/CollapseListView-in-xamarin.forms) SharedSpace offers custom data-binding with your underlying collection object to be displayed in the list. Please refer to [Usage](#usage) for more details.   
 
 ![demo](sharedspace-expandable-list-resize.gif)    ![demo](sharedspace-expandable-list-android-resize.gif)  
 
 <a name="usage"></a>
 ### Usage  
-This is also available as a nuget package in (https://www.nuget.org/packages/SharedSpace.ExpandableList/).  
 
-In your XAML add a reference to SharedSpace.CustomControls.  
-Set the bindable attributes *Item* & *ChildSelectedCommand*. The values for these must be available in your view model. 
-The following is an example XAML
+In your XAML add a reference to SharedSpace.CustomControls.    
+Set the bindable attributes *Item* & *ChildSelectedCommand*. The values for these must be available in your view model.   
+The following is an example XAML  
 
 ```
 <?xml version="1.0" encoding="utf-8" ?>
@@ -30,7 +31,7 @@ The following is an example XAML
 ```  
 
 
-In your view model class add a reference to *SharedSpace.DomainObjects*.   
+In your view model, add a reference to *SharedSpace.DomainObjects*.   
 Create a property of type *ExpandableListCollection* and set this as the data binding context for *Item* property in XAML.  
 Create a Command property and set this as the binding context for *ChildSelectedCommand* in XAML.  
 Following is an example view model with these settings.   
@@ -43,5 +44,22 @@ public Command ItemSelected => new Command(async (selectedItem) =>
   var item = selectedItem as ExpandableListItem;
   await App.Current.MainPage.DisplayAlert("You selected an item", item.Name, "Cancel");
 });
-```
-    
+```  
+
+In your **Android** project add a reference to *SharedSpace.Droid.Lib*.  
+In your MainActivity OnCreate method add the following. (import *SharedSpace.Droid.Lib*)   
+```csharp 
+ExpandableListViewRenderer.Init();
+```  
+
+As for **iOS** add a reference to *SharedSpace.iOS.Lib*.  
+In your AppDelegate FinishedLaunching method add the following.  
+```csharp 
+ExpandableListViewRenderer.Init();
+```  
+
+That's all folks :) 
+
+Please check out the example Droid & iOS projects as a guide. 
+
+Note: At the moment SharedSpace offers only two customizable options, i.e. *Items* & *ChildSelectedCommand*. Please keep an eye for more options in future. 
