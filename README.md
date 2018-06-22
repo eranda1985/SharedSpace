@@ -62,4 +62,4 @@ That's all folks :)
 
 Please check out the example Droid & iOS projects as a guide. 
 
-Note: At the moment SharedSpace offers only two customizable options, i.e. *Items* & *ChildSelectedCommand*. Please keep an eye for more options in future. 
+***Note***: At the moment SharedSpace offers only two customizable options, i.e. *Items* & *ChildSelectedCommand*. Please keep an eye for more options in future. 
