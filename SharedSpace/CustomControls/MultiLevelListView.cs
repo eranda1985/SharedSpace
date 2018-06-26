@@ -9,7 +9,17 @@ namespace SharedSpace.CustomControls
 	{
 		public static readonly BindableProperty ItemsProperty = BindableProperty.Create(nameof(Items), typeof(List<ExpandableListItem>), typeof(MultiLevelListView), null, BindingMode.TwoWay);
 		public static readonly BindableProperty ChildSelectedCommandProperty = BindableProperty.Create(nameof(ChildSelectedCommand), typeof(ICommand), typeof(MultiLevelListView), null, BindingMode.TwoWay);
-		
+		public static readonly BindableProperty GroupBackColorProperty = BindableProperty.Create(nameof(GroupBackColor), typeof(string), typeof(MultiLevelListView), "", BindingMode.TwoWay);
+
+		public string GroupBackColor
+		{
+			get => (string)GetValue(GroupBackColorProperty);
+			set
+			{
+				SetValue(GroupBackColorProperty, value);
+			}
+		}
+
 		public List<ExpandableListItem> Items
 		{
 			get => (List<ExpandableListItem>)GetValue(ItemsProperty);
