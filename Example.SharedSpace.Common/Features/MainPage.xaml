@@ -9,8 +9,8 @@
     <StackLayout Spacing="0">
       <customControls:MultiLevelListView Items="{Binding ListItems}" 
                                          ChildSelectedCommand="{Binding ItemSelected}" 
-                                         GroupBackColor="#585858" 
-                                         ChildBackColor="#505050"
+                                         GroupBackColor="#ff004080" 
+                                         ChildBackColor="#fff5f5f5"
                                          VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand"/>
     </StackLayout>
   </ContentPage.Content>

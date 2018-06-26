@@ -77,6 +77,7 @@ namespace SharedSpace.Droid.Lib
 				groupRow = FormsContext.LayoutInflater.Inflate(Resource.Layout.ExpandableListGroup, null);
 			}
 			groupRow.FindViewById<TextView>(Resource.Id.txtView).Text = DataList[groupPosition].Name;
+			
 			groupRow.SetBackgroundColor(Android.Graphics.Color.ParseColor(_multiLevelListView.GroupBackColor));
 			return groupRow;
 		}
