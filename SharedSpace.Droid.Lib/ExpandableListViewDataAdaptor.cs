@@ -54,8 +54,9 @@ namespace SharedSpace.Droid.Lib
 			newValue = DataList[groupPosition].ChildItems;
 			row.FindViewById<TextView>(Resource.Id.txtTitle).Text = newValue[childPosition].Name;
 			row.FindViewById<TextView>(Resource.Id.txtDesc).Text = newValue[childPosition].Description;
+			row.SetBackgroundColor(Android.Graphics.Color.ParseColor(_multiLevelListView.ChildBackColor));
 			return row;
-			
+
 		}
 
 		public override Java.Lang.Object GetGroup(int groupPosition)

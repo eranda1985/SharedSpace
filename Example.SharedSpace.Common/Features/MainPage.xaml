@@ -7,7 +7,10 @@
              BackgroundColor="{StaticResource BackgroundColor}">
   <ContentPage.Content>
     <StackLayout Spacing="0">
-      <customControls:MultiLevelListView Items="{Binding ListItems}" ChildSelectedCommand="{Binding ItemSelected}" GroupBackColor="{Binding GroupBackColor}"
+      <customControls:MultiLevelListView Items="{Binding ListItems}" 
+                                         ChildSelectedCommand="{Binding ItemSelected}" 
+                                         GroupBackColor="#585858" 
+                                         ChildBackColor="#505050"
                                          VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand"/>
     </StackLayout>
   </ContentPage.Content>

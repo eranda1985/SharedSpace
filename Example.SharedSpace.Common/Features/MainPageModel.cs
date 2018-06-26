@@ -12,8 +12,6 @@ namespace Example.SharedSpace.Common.Features
 
 		public ExpandableListCollection ListItems { get => _listItems; set { _listItems = value; RaisePropertyChanged("ListItems"); } }
 
-		public string GroupBackColor { get; set; } = "#FF4081";
-
 		public Command ItemSelected => new Command(async (selectedItem) =>
 		{
 			// Describe your logic here when hit on a List item
