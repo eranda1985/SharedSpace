@@ -1,5 +1,5 @@
 # SharedSpace
-A Xamarin Forms expandable list for iOS &amp; Android, providing a single group to be expanded at a time.    
+A Xamarin Forms expandable list for iOS &amp; Android, providing a single group to be expanded at a time..    
 
 This is also available as a nuget package in (https://www.nuget.org/packages/SharedSpace.ExpandableList/).  
 
