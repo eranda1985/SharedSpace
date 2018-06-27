@@ -15,9 +15,9 @@ The aim of this project is to create a cross-platform expandable list which is e
 <a name="usage"></a>
 # Usage  
 
-In your XAML add a reference to SharedSpace.CustomControls.    
-Set the bindable attributes *Item* & *ChildSelectedCommand*. The values for these must be available in your view model.   
-The following is an example XAML  
+In your XAML add a reference to ***SharedSpace.CustomControls***.    
+Set the bindable attributes ***Items*** & ***ChildSelectedCommand***. For a full list bindable attributes check out [here](#attributes).  
+The values for these must be available in your view model. The following is an example XAML  
 
 ```
 <?xml version="1.0" encoding="utf-8" ?>
@@ -67,4 +67,9 @@ That's all folks :)
 
 Please check out the example Droid & iOS projects as a guide. 
 
-***Note***: At the moment SharedSpace offers only two customizable options, i.e. *Items* & *ChildSelectedCommand*. Please keep an eye for more options in future. 
+<a name="attributes"></a>
+# Bindable Attributes  
+- Items
+- ChildSelectedCommand
+- GroupBackColor 
+- ChildBackColor 
