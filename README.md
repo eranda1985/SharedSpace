@@ -36,9 +36,9 @@ The values for these must be available in your view model. The following is an e
 ```  
 
 
-In your view model, add a reference to *SharedSpace.DomainObjects*.   
-Create a property of type *ExpandableListCollection* and set this as the data binding context for *Item* property in XAML.  
-Create a Command property and set this as the binding context for *ChildSelectedCommand* in XAML.  
+In your view model, add a reference to ***SharedSpace.DomainObjects***.   
+Create a property of type ***ExpandableListCollection*** and set this as the data binding context for ***Items*** property in XAML.  
+Create a Command property and set this as the binding context for ***ChildSelectedCommand*** in XAML.  
 Following is an example view model with these settings.   
 ```csharp
 public ExpandableListCollection ListItems { get => _listItems; set { _listItems = value; RaisePropertyChanged("ListItems"); } }
@@ -51,13 +51,13 @@ public Command ItemSelected => new Command(async (selectedItem) =>
 });
 ```  
 
-In your **Android** project add a reference to *SharedSpace.Droid.Lib*.  
-In your MainActivity OnCreate method add the following. (import *SharedSpace.Droid.Lib*)   
+In your ***Android*** project add a reference to ***SharedSpace.Droid.Lib***.  
+In your MainActivity OnCreate method add the following. (import ***SharedSpace.Droid.Lib***)   
 ```csharp 
 ExpandableListViewRenderer.Init();
 ```  
 
-As for **iOS** add a reference to *SharedSpace.iOS.Lib*.  
+As for ***iOS*** add a reference to ***SharedSpace.iOS.Lib***.  
 In your AppDelegate FinishedLaunching method add the following.  
 ```csharp 
 ExpandableListViewRenderer.Init();
