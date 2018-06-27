@@ -4,6 +4,7 @@ using System.Linq;
 using Android.App;
 using Android.Views;
 using Android.Widget;
+using SharedSpace.CustomControls;
 using SharedSpace.DomainObjects;
 
 namespace SharedSpace.Droid.Lib
@@ -13,10 +14,13 @@ namespace SharedSpace.Droid.Lib
 		public Activity FormsContext { get; set; }
 		public List<ExpandableListItem> DataList { get; set; }
 
-		public ExpandableListViewDataAdaptor(Activity context, List<ExpandableListItem> list)
+		private MultiLevelListView _multiLevelListView = null;
+
+		public ExpandableListViewDataAdaptor(Activity context, MultiLevelListView multiLevelListView)
 		{
 			FormsContext = context;
-			DataList = list;
+			DataList = multiLevelListView.Items;
+			_multiLevelListView = multiLevelListView;
 		}
 
 		public override int GroupCount => DataList.Count;
@@ -50,8 +54,9 @@ namespace SharedSpace.Droid.Lib
 			newValue = DataList[groupPosition].ChildItems;
 			row.FindViewById<TextView>(Resource.Id.txtTitle).Text = newValue[childPosition].Name;
 			row.FindViewById<TextView>(Resource.Id.txtDesc).Text = newValue[childPosition].Description;
+			row.SetBackgroundColor(Android.Graphics.Color.ParseColor(_multiLevelListView.ChildBackColor));
 			return row;
-			
+
 		}
 
 		public override Java.Lang.Object GetGroup(int groupPosition)
@@ -72,6 +77,8 @@ namespace SharedSpace.Droid.Lib
 				groupRow = FormsContext.LayoutInflater.Inflate(Resource.Layout.ExpandableListGroup, null);
 			}
 			groupRow.FindViewById<TextView>(Resource.Id.txtView).Text = DataList[groupPosition].Name;
+			
+			groupRow.SetBackgroundColor(Android.Graphics.Color.ParseColor(_multiLevelListView.GroupBackColor));
 			return groupRow;
 		}
 

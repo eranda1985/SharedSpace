@@ -113,7 +113,7 @@ namespace SharedSpace.Droid.Lib
 			var control = new ExpandableListView(this.Context);
 			if (e.NewElement != null)
 			{
-				control.SetAdapter(new ExpandableListViewDataAdaptor(this.Context as Activity, e.NewElement.Items));
+				control.SetAdapter(new ExpandableListViewDataAdaptor(this.Context as Activity, e.NewElement));
 				control.SetGroupIndicator(null);
 				control.SetOnGroupExpandListener(this);
 				control.SetOnGroupCollapseListener(this);
@@ -128,7 +128,7 @@ namespace SharedSpace.Droid.Lib
 			base.OnElementPropertyChanged(sender, e);
 			if(e.PropertyName == MultiLevelListView.ItemsProperty.PropertyName)
 			{
-				Control.SetAdapter(new ExpandableListViewDataAdaptor(this.Context as Activity, Element.Items));
+				Control.SetAdapter(new ExpandableListViewDataAdaptor(this.Context as Activity, Element));
 			}
 			if(e.PropertyName == MultiLevelListView.ChildSelectedCommandProperty.PropertyName)
 			{
