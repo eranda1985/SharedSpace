@@ -1,14 +1,19 @@
 # SharedSpace
 A Xamarin Forms expandable list for iOS &amp; Android, providing a single group to be expanded at a time..    
 
+ioS [![Build status](https://build.appcenter.ms/v0.1/apps/42853fae-8c89-454c-9cbf-22fa393afd24/branches/master/badge)](https://appcenter.ms)  Droid [![Build status](https://build.appcenter.ms/v0.1/apps/5a3c060e-1cd3-48f0-9c68-bd9e838212dc/branches/master/badge)](https://appcenter.ms)
+
 This is also available as a nuget package in (https://www.nuget.org/packages/SharedSpace.ExpandableList/).  
+
+--- 
 
 The aim of this project is to create a cross-platform expandable list which is easier to use and saves developer time. Inspired by the work of [Jay Shukla](https://github.com/shuklajay/CollapseListView-in-xamarin.forms) SharedSpace offers custom data-binding with your underlying collection object to be displayed in the list. Please refer to [Usage](#usage) for more details.   
 
 ![demo](sharedspace-expandable-list-resize.gif)    ![demo](sharedspace-expandable-list-android-resize.gif)  
 
+---
 <a name="usage"></a>
-### Usage  
+# Usage  
 
 In your XAML add a reference to SharedSpace.CustomControls.    
 Set the bindable attributes *Item* & *ChildSelectedCommand*. The values for these must be available in your view model.   
