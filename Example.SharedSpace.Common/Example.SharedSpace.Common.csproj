@@ -6,11 +6,8 @@
 
   <ItemGroup>
     <PackageReference Include="FreshMvvm" Version="2.2.4" />
+    <PackageReference Include="SharedSpace.ExpandableList" Version="1.0.1" />
     <PackageReference Include="Xamarin.Forms" Version="2.4.0.91020" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <ProjectReference Include="..\SharedSpace\SharedSpace.csproj" />
   </ItemGroup>
 
   <ItemGroup>
