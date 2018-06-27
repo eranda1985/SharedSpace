@@ -5,7 +5,7 @@
     <version>1.0.0</version>
     <authors>Eranda Galhenage</authors>
     <owners>Eranda Galhenage</owners>
-    <iconUrl>https://github.com/eranda1985/SharedSpace</iconUrl>
+    <projectUrl>https://github.com/eranda1985/SharedSpace</projectUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>An expandable list for iOS and Android. Built against Xamarin Forms 2.4.0.91020</description>
     <releaseNotes>Summary of changes made in this release of the package.</releaseNotes>
