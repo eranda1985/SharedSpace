@@ -16,10 +16,12 @@ namespace SharedSpace.iOS.Lib
 		private ExpandableListCell _nativeCell = null;
 		private int _lastExpandedSection = -1;
 		private ExpandableListViewRenderer _expandableListViewiOSRenderer;
+		private MultiLevelListView _multiLevelListView = null;
 
 		public ExpandableListDataSource(MultiLevelListView expandableListView)
 		{
 			_items = expandableListView.Items;
+			_multiLevelListView = expandableListView;
 		}
 
 		public ExpandableListDataSource(MultiLevelListView expandableListView, ExpandableListViewRenderer expandableListViewiOSRenderer) : this(expandableListView)
@@ -43,10 +45,13 @@ namespace SharedSpace.iOS.Lib
 				return cell;
 			}
 
+			var rgb = GetColorValuesRGB(_multiLevelListView?.ChildBackColor);
+
 			_nativeCell = new ExpandableListCell(UITableViewCellStyle.Default, nameof(ExpandableListCell), tableView.Frame)
 			{
 				Name = item.Name,
-				DescriptionText = item.Description
+				DescriptionText = item.Description,
+				BackgroundColor = UIColor.FromRGB(rgb[0], rgb[1], rgb[2])
 			};
 			return _nativeCell;
 		}
@@ -186,9 +191,55 @@ namespace SharedSpace.iOS.Lib
 				_lastExpandedSection = (int)section;
 				tableView.ReloadData();
 			};
+			var rgb = GetColorValuesRGB(_multiLevelListView?.GroupBackColor);
+			groupSection.BackgroundColor = UIColor.FromRGB(rgb[0], rgb[1], rgb[2]);
+
 			return groupSection;
 		}
 
+		/// <summary>
+		/// Parse the hexColor string and returns rgb values in an array
+		/// </summary>
+		/// <param name="colorString"></param>
+		/// <returns></returns>
+		private int[] GetColorValuesRGB(string colorString)
+		{
+			string hexColor = colorString.Trim('#');
+
+			if (hexColor.Length == 8)
+			{
+				// Ignore first couple as it's Alpha
+				hexColor = hexColor.Substring(2);
+			}
+
+			else if (hexColor.Length == 6)
+			{
+				hexColor = hexColor.Substring(0);
+			}
+
+			int red, green, blue = 0;
+
+			try
+			{
+				// Red
+				red = Int32.Parse(hexColor.Substring(0,2), System.Globalization.NumberStyles.AllowHexSpecifier);
+				
+				// Green
+				green = Int32.Parse(hexColor.Substring(2, 2), System.Globalization.NumberStyles.AllowHexSpecifier);
+				
+				// Blue
+				blue = Int32.Parse(hexColor.Substring(4, 2), System.Globalization.NumberStyles.AllowHexSpecifier);
+
+				return new int[] { red, green, blue };
+			}
+			catch (FormatException ex)
+			{
+				UIAlertController actionController = UIAlertController.Create("Error", "Error in parsing color", UIAlertControllerStyle.Alert);
+				_expandableListViewiOSRenderer?.ViewController?.PresentViewController(actionController, true, null);
+				return new int[] { 255, 64, 129 };
+
+			}
+		}
 
 	}
 }
