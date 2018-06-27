@@ -71,5 +71,5 @@ Please check out the example Droid & iOS projects as a guide.
 # Bindable Attributes  
 - Items
 - ChildSelectedCommand
-- GroupBackColor 
-- ChildBackColor 
+- GroupBackColor (Either in 6 digit or 8 digit hex format- #aabbcc or #ffaabbcc)
+- ChildBackColor (Either in 6 digit or 8 digit hex format- #aabbcc or #ffaabbcc)
