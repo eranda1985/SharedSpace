@@ -8,7 +8,7 @@
     <projectUrl>https://github.com/eranda1985/SharedSpace</projectUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>An expandable list for iOS and Android. Built against Xamarin Forms 2.4.0.91020</description>
-    <releaseNotes>Summary of changes made in this release of the package.</releaseNotes>
+    <releaseNotes>Added bindable attributes for Group and Child BackGroundColor.</releaseNotes>
     <copyright>Copyright 2018</copyright>
     <tags></tags>
     <dependencies>
