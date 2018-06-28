@@ -98,25 +98,25 @@
       <HintPath>..\packages\FreshMvvm.2.2.0\lib\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10\FreshMvvm.dll</HintPath>
     </Reference>
     <Reference Include="SharedSpace, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\SharedSpace.ExpandableList.1.0.1\lib\Xamarin.iOS100\SharedSpace.dll</HintPath>
+      <HintPath>..\packages\SharedSpace.ExpandableList.1.0.2\lib\Xamarin.iOS100\SharedSpace.dll</HintPath>
     </Reference>
     <Reference Include="SharedSpace.iOS.Lib, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\SharedSpace.ExpandableList.1.0.1\lib\Xamarin.iOS100\SharedSpace.iOS.Lib.dll</HintPath>
+      <HintPath>..\packages\SharedSpace.ExpandableList.1.0.2\lib\Xamarin.iOS100\SharedSpace.iOS.Lib.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Core" />
     <Reference Include="Xamarin.Forms.Core, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\SharedSpace.ExpandableList.1.0.1\lib\Xamarin.iOS100\Xamarin.Forms.Core.dll</HintPath>
+      <HintPath>..\packages\SharedSpace.ExpandableList.1.0.2\lib\Xamarin.iOS100\Xamarin.Forms.Core.dll</HintPath>
     </Reference>
     <Reference Include="Xamarin.Forms.Platform, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\SharedSpace.ExpandableList.1.0.1\lib\Xamarin.iOS100\Xamarin.Forms.Platform.dll</HintPath>
+      <HintPath>..\packages\SharedSpace.ExpandableList.1.0.2\lib\Xamarin.iOS100\Xamarin.Forms.Platform.dll</HintPath>
     </Reference>
     <Reference Include="Xamarin.Forms.Platform.iOS, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\SharedSpace.ExpandableList.1.0.1\lib\Xamarin.iOS100\Xamarin.Forms.Platform.iOS.dll</HintPath>
+      <HintPath>..\packages\SharedSpace.ExpandableList.1.0.2\lib\Xamarin.iOS100\Xamarin.Forms.Platform.iOS.dll</HintPath>
     </Reference>
     <Reference Include="Xamarin.Forms.Xaml, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\SharedSpace.ExpandableList.1.0.1\lib\Xamarin.iOS100\Xamarin.Forms.Xaml.dll</HintPath>
+      <HintPath>..\packages\SharedSpace.ExpandableList.1.0.2\lib\Xamarin.iOS100\Xamarin.Forms.Xaml.dll</HintPath>
     </Reference>
     <Reference Include="Xamarin.iOS" />
   </ItemGroup>

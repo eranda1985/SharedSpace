@@ -2,7 +2,7 @@
 <package >
   <metadata>
     <id>SharedSpace.ExpandableList</id>
-    <version>1.0.1</version>
+    <version>1.0.2</version>
     <authors>Eranda Galhenage</authors>
     <owners>Eranda Galhenage</owners>
     <projectUrl>https://github.com/eranda1985/SharedSpace</projectUrl>
@@ -12,7 +12,7 @@
     <copyright>Copyright 2018</copyright>
     <tags></tags>
     <dependencies>
-      <dependency id="NETStandard.Library" version="2.0.1" />
+      <dependency id="NETStandard.Library" version="2.0.0" />
       <dependency id="Microsoft.NETCore.Platforms" version="1.1.0" />
       <dependency id="Xamarin.Forms" version="2.4.0.91020" />
       <dependency id="FreshEssentials" version="2.1.2" />
