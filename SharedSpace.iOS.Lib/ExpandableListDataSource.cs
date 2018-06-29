@@ -193,6 +193,7 @@ namespace SharedSpace.iOS.Lib
 			};
 			var rgb = GetColorValuesRGB(_multiLevelListView?.GroupBackColor);
 			groupSection.BackgroundColor = UIColor.FromRGB(rgb[0], rgb[1], rgb[2]);
+			groupSection.AccessibilityIdentifier = "sharedSpaceiOS" + _items[(int)section].Name;
 
 			return groupSection;
 		}

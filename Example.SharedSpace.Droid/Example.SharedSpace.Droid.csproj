@@ -93,9 +93,6 @@
     <PackageReference Include="NuGet.Build.Packaging">
       <Version>0.2.2</Version>
     </PackageReference>
-    <PackageReference Include="SharedSpace.ExpandableList">
-      <Version>1.0.2</Version>
-    </PackageReference>
     <PackageReference Include="Xamarin.Android.Support.Animated.Vector.Drawable">
       <Version>27.0.2.1</Version>
     </PackageReference>
@@ -138,8 +135,12 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Example.SharedSpace.Common\Example.SharedSpace.Common.csproj">
-      <Project>{CDCC8BB2-9B08-452F-A3B9-647E059314E6}</Project>
+      <Project>{cdcc8bb2-9b08-452f-a3b9-647e059314e6}</Project>
       <Name>Example.SharedSpace.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SharedSpace.Droid.Lib\SharedSpace.Droid.Lib.csproj">
+      <Project>{2f3d3492-4212-4809-8176-fc7bee9804a7}</Project>
+      <Name>SharedSpace.Droid.Lib</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />

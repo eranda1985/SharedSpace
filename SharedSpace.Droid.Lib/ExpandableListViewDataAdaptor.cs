@@ -55,6 +55,7 @@ namespace SharedSpace.Droid.Lib
 			row.FindViewById<TextView>(Resource.Id.txtTitle).Text = newValue[childPosition].Name;
 			row.FindViewById<TextView>(Resource.Id.txtDesc).Text = newValue[childPosition].Description;
 			row.SetBackgroundColor(Android.Graphics.Color.ParseColor(_multiLevelListView.ChildBackColor));
+			row.ContentDescription = "sharedSpaceDroid" + newValue[childPosition].Name;
 			return row;
 
 		}
@@ -79,6 +80,7 @@ namespace SharedSpace.Droid.Lib
 			groupRow.FindViewById<TextView>(Resource.Id.txtView).Text = DataList[groupPosition].Name;
 			
 			groupRow.SetBackgroundColor(Android.Graphics.Color.ParseColor(_multiLevelListView.GroupBackColor));
+			groupRow.ContentDescription = "sharedSpaceDroidGroup" + DataList[groupPosition].Name;
 			return groupRow;
 		}
 
