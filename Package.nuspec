@@ -2,17 +2,17 @@
 <package >
   <metadata>
     <id>SharedSpace.ExpandableList</id>
-    <version>1.0.0</version>
+    <version>1.0.2</version>
     <authors>Eranda Galhenage</authors>
     <owners>Eranda Galhenage</owners>
-    <iconUrl>https://github.com/eranda1985/SharedSpace</iconUrl>
+    <projectUrl>https://github.com/eranda1985/SharedSpace</projectUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>An expandable list for iOS and Android. Built against Xamarin Forms 2.4.0.91020</description>
-    <releaseNotes>Summary of changes made in this release of the package.</releaseNotes>
+    <releaseNotes>Added bindable attributes for Group and Child BackGroundColor.</releaseNotes>
     <copyright>Copyright 2018</copyright>
     <tags></tags>
     <dependencies>
-      <dependency id="NETStandard.Library" version="2.0.1" />
+      <dependency id="NETStandard.Library" version="2.0.0" />
       <dependency id="Microsoft.NETCore.Platforms" version="1.1.0" />
       <dependency id="Xamarin.Forms" version="2.4.0.91020" />
       <dependency id="FreshEssentials" version="2.1.2" />
