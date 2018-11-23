@@ -23,7 +23,7 @@ namespace SharedSpace.Droid.Lib
 			_multiLevelListView = multiLevelListView;
 		}
 
-		public override int GroupCount => DataList.Count;
+		public override int GroupCount => (int)DataList?.Count;
 
 		public override bool HasStableIds => true;
 

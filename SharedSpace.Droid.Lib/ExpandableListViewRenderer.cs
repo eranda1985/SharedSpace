@@ -16,8 +16,9 @@ namespace SharedSpace.Droid.Lib
 																						ExpandableListView.IOnChildClickListener
 	{
 		private int _lastExpandedGroup = -1;
+        private ExpandableListViewDataAdaptor _expandableListViewDataAdaptor = null;
 
-		public ExpandableListViewRenderer()
+        public ExpandableListViewRenderer()
 		{
 
 		}
@@ -113,7 +114,8 @@ namespace SharedSpace.Droid.Lib
 			var control = new ExpandableListView(this.Context);
 			if (e.NewElement != null)
 			{
-				control.SetAdapter(new ExpandableListViewDataAdaptor(this.Context as Activity, e.NewElement));
+                _expandableListViewDataAdaptor = new ExpandableListViewDataAdaptor(this.Context as Activity, e.NewElement);
+                control.SetAdapter(_expandableListViewDataAdaptor);
 				control.SetGroupIndicator(null);
 				control.SetOnGroupExpandListener(this);
 				control.SetOnGroupCollapseListener(this);
@@ -125,10 +127,24 @@ namespace SharedSpace.Droid.Lib
 
 		protected override void OnElementPropertyChanged(object sender, PropertyChangedEventArgs e)
 		{
-			base.OnElementPropertyChanged(sender, e);
+            // In Xamarin Forms > 3.0 this method is called when leaving the current view which in 
+            // turn results in setting the adapter object even if the view has been destroyed. 
+            // So explicitly return this method when Items are null;
+            if (sender.GetType() == typeof(MultiLevelListView))
+            {
+                var multiViewCtl = (MultiLevelListView)sender;
+                if (multiViewCtl.Items == null)
+                {
+                    return;
+                }
+            }
+
+            base.OnElementPropertyChanged(sender, e);
 			if(e.PropertyName == MultiLevelListView.ItemsProperty.PropertyName)
 			{
-				Control.SetAdapter(new ExpandableListViewDataAdaptor(this.Context as Activity, Element));
+                _expandableListViewDataAdaptor = new ExpandableListViewDataAdaptor(this.Context as Activity, Element);
+
+                Control.SetAdapter(_expandableListViewDataAdaptor);
 			}
 			if(e.PropertyName == MultiLevelListView.ChildSelectedCommandProperty.PropertyName)
 			{
@@ -138,8 +154,22 @@ namespace SharedSpace.Droid.Lib
 			}
 		}
 
+        protected override void Dispose(bool disposing)
+        {
+            base.Dispose(disposing);
 
-	}
+            if (_expandableListViewDataAdaptor != null)
+            {
+                _expandableListViewDataAdaptor.Dispose();
+                _expandableListViewDataAdaptor = null;
+               
+            }
+            
+
+        }
+
+
+    }
 
 	class ExpandableListViewEventArgs : PropertyChangedEventArgs
 	{

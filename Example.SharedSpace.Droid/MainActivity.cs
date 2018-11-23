@@ -6,7 +6,7 @@ using Xamarin.Forms;
 
 namespace Example.SharedSpace.Droid
 {
-	[Activity(Label = "@string/app_name", Theme = "@style/MyTheme", MainLauncher = true)]
+	[Activity(Label = "@string/app_name", Theme = "@style/MyTheme", MainLauncher = true, LaunchMode = Android.Content.PM.LaunchMode.SingleInstance)]
 	public class MainActivity : Xamarin.Forms.Platform.Android.FormsAppCompatActivity
 	{
 

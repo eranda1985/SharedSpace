@@ -93,5 +93,10 @@ namespace Example.SharedSpace.Common.Features
 			res.AddRange(temp);
 			return res;
 		}
-	}
+
+        protected override void ViewIsDisappearing(object sender, EventArgs e)
+        {
+            base.ViewIsDisappearing(sender, e);
+        }
+    }
 }
