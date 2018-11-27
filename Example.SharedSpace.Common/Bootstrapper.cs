@@ -11,8 +11,12 @@ namespace Example.SharedSpace.Common
     {
 		public static Page CreateMainPage()
 		{
-			var page = FreshPageModelResolver.ResolvePageModel<MainPageModel>();
-			return page;
+            //var page = FreshPageModelResolver.ResolvePageModel<MediatorPageModel>();
+            var welcomePage = FreshPageModelResolver.ResolvePageModel<WelcomePageModel>();
+
+            var stack = new FreshNavigationContainer(welcomePage, "Welcome");
+
+            return stack;
 		}
 	}
 }

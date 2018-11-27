@@ -10,144 +10,134 @@ using Xamarin.Forms.Platform.Android;
 
 namespace SharedSpace.Droid.Lib
 {
-	public class ExpandableListViewRenderer : ViewRenderer<MultiLevelListView, ExpandableListView>,
-																						ExpandableListView.IOnGroupExpandListener,
-																						ExpandableListView.IOnGroupCollapseListener,
-																						ExpandableListView.IOnChildClickListener
-	{
-		private int _lastExpandedGroup = -1;
+    public class ExpandableListViewRenderer : ViewRenderer<MultiLevelListView, ExpandableListView>,
+                                                                                        ExpandableListView.IOnGroupExpandListener,
+                                                                                        ExpandableListView.IOnGroupCollapseListener,
+                                                                                        ExpandableListView.IOnChildClickListener
+    {
+        private int _lastExpandedGroup = -1;
+        private ExpandableListViewDataAdaptor _expandableListViewDataAdaptor = null;
 
-		public ExpandableListViewRenderer()
-		{
+        public ExpandableListViewRenderer()
+        {
 
-		}
+        }
 
-		public static void Init()
-		{
+        public static void Init()
+        {
 
-		}
+        }
 
-		public bool OnChildClick(ExpandableListView parent, Android.Views.View clickedView, int groupPosition, int childPosition, long id)
-		{
-			var adaptor = Control.ExpandableListAdapter as ExpandableListViewDataAdaptor;
-			var dataItem = adaptor.DataList[groupPosition].ChildItems[childPosition];
-			if (!dataItem.HasItemClickAssigned)
-			{
-				dataItem.ItemClicked += DataItem_ItemClicked;
-			}
-			
-			dataItem.HasItemClickAssigned = true;
-			dataItem.HandleClickCallBack.Invoke(parent, new ExpandableListViewEventArgs("ChildSelectedCommand") { GroupPosition = groupPosition, ChildPosition = childPosition });
-			return false;
-		}
+        public bool OnChildClick(ExpandableListView parent, Android.Views.View clickedView, int groupPosition, int childPosition, long id)
+        {
+            var adaptor = Control.ExpandableListAdapter as ExpandableListViewDataAdaptor;
+            var dataItem = adaptor.DataList[groupPosition].ChildItems[childPosition];
+            if (!dataItem.HasItemClickAssigned)
+            {
+                dataItem.ItemClicked += DataItem_ItemClicked;
+            }
 
-		private void DataItem_ItemClicked(object sender, System.EventArgs e)
-		{
-			OnElementPropertyChanged(sender, (ExpandableListViewEventArgs)e);
-		}
+            dataItem.HasItemClickAssigned = true;
+            dataItem.HandleClickCallBack.Invoke(parent, new ExpandableListViewEventArgs("ChildSelectedCommand") { GroupPosition = groupPosition, ChildPosition = childPosition });
+            return false;
+        }
 
-		public void OnGroupCollapse(int groupPosition)
-		{
-			// Grab the Group object
-			var groupView = Control.GetChildAt(groupPosition);
+        private void DataItem_ItemClicked(object sender, System.EventArgs e)
+        {
+            OnElementPropertyChanged(sender, (ExpandableListViewEventArgs)e);
+        }
 
-			// If it's not a Group object continue until we find one.
-			while (groupView?.Id == Resource.Id.layoutChild)
-			{
-				groupView = Control.GetChildAt(++groupPosition);
-				if (groupView == null)
-				{
-					break;
-				}
-			}
+        public void OnGroupCollapse(int groupPosition)
+        {
+            Element.Items[groupPosition].IsExpanded = false;
+        }
 
-			// Set the group indicator to arrow down
-			if (groupView?.Id == Resource.Id.groupView)
-			{
-				var imgView = groupView.FindViewById<ImageView>(Resource.Id.imgView) ?? new ImageView(context: Context);
-				imgView.SetImageResource(Resource.Mipmap.arrow_down_darkgrey);
-			}
-		}
+        public void OnGroupExpand(int groupPosition)
+        {
+            if (Control != null)
+            {
+                if (_lastExpandedGroup == -1)
+                {
+                    _lastExpandedGroup = groupPosition;
+                }
 
-		public void OnGroupExpand(int groupPosition)
-		{
-			if(Control != null)
-			{
-				if(_lastExpandedGroup == -1)
-				{
-					_lastExpandedGroup = groupPosition;
-				}
+                else if (_lastExpandedGroup != groupPosition)
+                {
+                    Control.CollapseGroup(_lastExpandedGroup);
+                    _lastExpandedGroup = groupPosition;
+                }
 
-				else if(_lastExpandedGroup != groupPosition)
-				{
-					Control.CollapseGroup(_lastExpandedGroup);
-					_lastExpandedGroup = groupPosition;
-				}
+                Element.Items[groupPosition].IsExpanded = true;
+            }
+        }
 
-				// Grab the Group object
-				var groupView = Control.GetChildAt(groupPosition);
+        protected override void OnElementChanged(ElementChangedEventArgs<MultiLevelListView> e)
+        {
+            base.OnElementChanged(e);
 
-				// If it's not a Group object continue until we find one.
-				while(groupView?.Id == Resource.Id.layoutChild)
-				{
-					groupView = Control.GetChildAt(++groupPosition);
-					if(groupView == null)
-					{
-						break;
-					}
-				}
+            var control = new ExpandableListView(this.Context);
+            if (e.NewElement != null)
+            {
+                _expandableListViewDataAdaptor = new ExpandableListViewDataAdaptor(this.Context as Activity, e.NewElement);
+                control.SetAdapter(_expandableListViewDataAdaptor);
+                control.SetGroupIndicator(null);
+                control.SetOnGroupExpandListener(this);
+                control.SetOnGroupCollapseListener(this);
+                control.SetOnChildClickListener(this);
+            }
 
-				// Set the group indicator to arrow up
-				if (groupView?.Id == Resource.Id.groupView)
-				{
-					var imgView = groupView.FindViewById<ImageView>(Resource.Id.imgView) ?? new ImageView(Context);
-					imgView.SetImageResource(Resource.Mipmap.arrow_up_darkgrey);
-				}
-			}
-		}
+            SetNativeControl(control);
+        }
 
-		protected override void OnElementChanged(ElementChangedEventArgs<MultiLevelListView> e)
-		{
-			base.OnElementChanged(e);
+        protected override void OnElementPropertyChanged(object sender, PropertyChangedEventArgs e)
+        {
+            // In Xamarin Forms > 3.0 this method is called when leaving the current view which in 
+            // turn results in setting the adapter object even if the view has been destroyed. 
+            // So explicitly return this method when Items are null;
+            if (sender.GetType() == typeof(MultiLevelListView))
+            {
+                var multiViewCtl = (MultiLevelListView)sender;
+                if (multiViewCtl.Items == null)
+                {
+                    return;
+                }
+            }
 
-			var control = new ExpandableListView(this.Context);
-			if (e.NewElement != null)
-			{
-				control.SetAdapter(new ExpandableListViewDataAdaptor(this.Context as Activity, e.NewElement));
-				control.SetGroupIndicator(null);
-				control.SetOnGroupExpandListener(this);
-				control.SetOnGroupCollapseListener(this);
-				control.SetOnChildClickListener(this);
-			}
+            base.OnElementPropertyChanged(sender, e);
+            if (e.PropertyName == MultiLevelListView.ItemsProperty.PropertyName)
+            {
+                _expandableListViewDataAdaptor = new ExpandableListViewDataAdaptor(this.Context as Activity, Element);
 
-			SetNativeControl(control);
-		}
+                Control.SetAdapter(_expandableListViewDataAdaptor);
+            }
+            if (e.PropertyName == MultiLevelListView.ChildSelectedCommandProperty.PropertyName)
+            {
+                var selectedItem = Element.Items[((ExpandableListViewEventArgs)e).GroupPosition].ChildItems[((ExpandableListViewEventArgs)e).ChildPosition];
+                Element.ChildSelectedCommand?.Execute(selectedItem);
 
-		protected override void OnElementPropertyChanged(object sender, PropertyChangedEventArgs e)
-		{
-			base.OnElementPropertyChanged(sender, e);
-			if(e.PropertyName == MultiLevelListView.ItemsProperty.PropertyName)
-			{
-				Control.SetAdapter(new ExpandableListViewDataAdaptor(this.Context as Activity, Element));
-			}
-			if(e.PropertyName == MultiLevelListView.ChildSelectedCommandProperty.PropertyName)
-			{
-				var selectedItem = Element.Items[((ExpandableListViewEventArgs)e).GroupPosition].ChildItems[((ExpandableListViewEventArgs)e).ChildPosition];
-				Element.ChildSelectedCommand?.Execute(selectedItem);
-				
-			}
-		}
+            }
+        }
 
+        protected override void Dispose(bool disposing)
+        {
+            base.Dispose(disposing);
 
-	}
+            if (_expandableListViewDataAdaptor != null)
+            {
+                _expandableListViewDataAdaptor.Dispose();
+                _expandableListViewDataAdaptor = null;
 
-	class ExpandableListViewEventArgs : PropertyChangedEventArgs
-	{
-		public ExpandableListViewEventArgs(string propertyName) : base(propertyName)
-		{
-		}
+            }
+        }
+    }
 
-		public int GroupPosition { get; set; }
-		public int ChildPosition { get; set; }
-	}
+    class ExpandableListViewEventArgs : PropertyChangedEventArgs
+    {
+        public ExpandableListViewEventArgs(string propertyName) : base(propertyName)
+        {
+        }
+
+        public int GroupPosition { get; set; }
+        public int ChildPosition { get; set; }
+    }
 }
