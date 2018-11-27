@@ -8,7 +8,7 @@
     <projectUrl>https://github.com/eranda1985/SharedSpace</projectUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>An expandable list for iOS and Android. Built against Xamarin Forms 3.3.0.967583</description>
-    <releaseNotes>Added bindable attributes for Group and Child BackGroundColor.</releaseNotes>
+    <releaseNotes>Support for Xamarin Forms 3.3. Fixed the arrow directions issue in Android. Fixed the undisposed object issue.</releaseNotes>
     <copyright>Copyright 2018</copyright>
     <tags></tags>
     <dependencies>
