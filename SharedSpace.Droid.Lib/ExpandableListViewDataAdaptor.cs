@@ -78,9 +78,16 @@ namespace SharedSpace.Droid.Lib
 				groupRow = FormsContext.LayoutInflater.Inflate(Resource.Layout.ExpandableListGroup, null);
 			}
 			groupRow.FindViewById<TextView>(Resource.Id.txtView).Text = DataList[groupPosition].Name;
-			
-			groupRow.SetBackgroundColor(Android.Graphics.Color.ParseColor(_multiLevelListView.GroupBackColor));
-			groupRow.ContentDescription = "sharedSpaceDroidGroup" + DataList[groupPosition].Name;
+            if (DataList[groupPosition].IsExpanded)
+            {
+                groupRow.FindViewById<ImageView>(Resource.Id.imgView).SetImageResource(Resource.Mipmap.arrow_up_darkgrey);
+            }
+            else
+            {
+                groupRow.FindViewById<ImageView>(Resource.Id.imgView).SetImageResource(Resource.Mipmap.arrow_down_darkgrey);
+            }
+            groupRow.SetBackgroundColor(Android.Graphics.Color.ParseColor(_multiLevelListView.GroupBackColor));
+			groupRow.ContentDescription = "sharedSpaceDroidGroup " + groupPosition;
 			return groupRow;
 		}
 
