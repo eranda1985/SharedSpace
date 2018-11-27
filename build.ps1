@@ -1,6 +1,6 @@
 $ProjectDir='.'
 $SolutionDir='.'
-$msBuild="D:\Program Files (x86)\Microsoft Visual Studio\2017\Enterprise\MSBuild\15.0\Bin\MSBuild.exe"
+$msBuild="C:\Program Files (x86)\Microsoft Visual Studio\2017\Enterprise\MSBuild\15.0\Bin\MSBuild.exe"
 $Nuget="$ProjectDir\nuget.exe"
 
 $CoreProj="$ProjectDir\SharedSpace\SharedSpace.csproj"

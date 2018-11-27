@@ -86,12 +86,137 @@ namespace Example.SharedSpace.Common.Features
 							Name = "Group3-Child 2", Description = "Some description goes here"
 						}
 					}
-				}
-			};
+				},
+                new ExpandableListItem
+                {
+                    Name = "Group 4",
+                    ChildItems = new List<ExpandableListItem>
+                    {
+                        new ExpandableListItem
+                        {
+                            Name = "Group4-Child 1", Description = "Some description goes here"
+                        },
+                        new ExpandableListItem
+                        {
+                            Name = "Group4-Child 2", Description = "Some description goes here"
+                        }
+                    }
+                },
+                new ExpandableListItem
+                {
+                    Name = "Group 5",
+                    ChildItems = new List<ExpandableListItem>
+                    {
+                        new ExpandableListItem
+                        {
+                            Name = "Group5-Child 1", Description = "Some description goes here"
+                        },
+                        new ExpandableListItem
+                        {
+                            Name = "Group5-Child 2", Description = "Some description goes here"
+                        }
+                    }
+                },
+                new ExpandableListItem
+                {
+                    Name = "Group 6",
+                    ChildItems = new List<ExpandableListItem>
+                    {
+                        new ExpandableListItem
+                        {
+                            Name = "Group6-Child 1", Description = "Some description goes here"
+                        },
+                        new ExpandableListItem
+                        {
+                            Name = "Group6-Child 2", Description = "Some description goes here"
+                        }
+                    }
+                },
+                new ExpandableListItem
+                {
+                    Name = "Group 7",
+                    ChildItems = new List<ExpandableListItem>
+                    {
+                        new ExpandableListItem
+                        {
+                            Name = "Group7-Child 1", Description = "Some description goes here"
+                        },
+                        new ExpandableListItem
+                        {
+                            Name = "Group7-Child 2", Description = "Some description goes here"
+                        }
+                    }
+                },
+                new ExpandableListItem
+                {
+                    Name = "Group 8",
+                    ChildItems = new List<ExpandableListItem>
+                    {
+                        new ExpandableListItem
+                        {
+                            Name = "Group8-Child 1", Description = "Some description goes here"
+                        },
+                        new ExpandableListItem
+                        {
+                            Name = "Group8-Child 2", Description = "Some description goes here"
+                        }
+                    }
+                },
+                new ExpandableListItem
+                {
+                    Name = "Group 9",
+                    ChildItems = new List<ExpandableListItem>
+                    {
+                        new ExpandableListItem
+                        {
+                            Name = "Group9-Child 1", Description = "Some description goes here"
+                        },
+                        new ExpandableListItem
+                        {
+                            Name = "Group9-Child 2", Description = "Some description goes here"
+                        }
+                    }
+                },
+                new ExpandableListItem
+                {
+                    Name = "Group 10",
+                    ChildItems = new List<ExpandableListItem>
+                    {
+                        new ExpandableListItem
+                        {
+                            Name = "Group10-Child 1", Description = "Some description goes here"
+                        },
+                        new ExpandableListItem
+                        {
+                            Name = "Group10-Child 2", Description = "Some description goes here"
+                        }
+                    }
+                },
+                new ExpandableListItem
+                {
+                    Name = "Group 11",
+                    ChildItems = new List<ExpandableListItem>
+                    {
+                        new ExpandableListItem
+                        {
+                            Name = "Group11-Child 1", Description = "Some description goes here"
+                        },
+                        new ExpandableListItem
+                        {
+                            Name = "Group11-Child 2", Description = "Some description goes here"
+                        }
+                    }
+                }
+            };
 
 			var res = new ExpandableListCollection();
 			res.AddRange(temp);
 			return res;
 		}
-	}
+
+        protected override void ViewIsDisappearing(object sender, EventArgs e)
+        {
+            base.ViewIsDisappearing(sender, e);
+        }
+    }
 }
